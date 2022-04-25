@@ -53,5 +53,5 @@ jobs:
           cluster_name: ${{ secrets.CLUSTER_NAME }}
         with:
           args: | 
-            kubectl rollout restart deployment/was
+            kubectl rollout restart deployment/was -n was-ns
 
