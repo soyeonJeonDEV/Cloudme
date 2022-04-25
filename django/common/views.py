@@ -6,8 +6,7 @@ from django.core.cache import cache
 
 
 def index(request):
-    cache.set('greeting', 'Hello world', 30)
-    cache.get('greeting')
+    cache.set('user', 'user', 30)
     return render(request, 'main.html')
 
 def register(request):
