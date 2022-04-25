@@ -6,7 +6,8 @@ from django.core.cache import cache
 
 
 def index(request):
-    print(cache.get('KEY'))
+    cache.set('greeting', 'Hello world', 30)
+    cache.get('greeting')
     return render(request, 'main.html')
 
 def register(request):
