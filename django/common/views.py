@@ -2,8 +2,11 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .models import Profile 
 from django.contrib.auth.models import User
+from django.core.cache import cache
+
 
 def index(request):
+    print(cache.get('KEY'))
     return render(request, 'main.html')
 
 def register(request):
