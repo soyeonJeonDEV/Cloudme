@@ -1,0 +1,81 @@
+{% include "header.html" %} 
+{% block content %}
+{% load static %}
+<link href='{% static "/css/style.css" %}' rel="stylesheet">
+<section id="about" class="about" >
+    <div class="container">
+        
+</div>
+<section id="about" class="about" >
+    <div class="container">
+        
+</div>
+<!-- ---------------------- [edit] ------------------------ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<h3 class="text-center mt-3">코로나 현황</h3>
+<h5 class="text-center mt-3"> {{date}} </h5>
+<div class="row mb-3 mt-3 text-center justify-content-center">
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">국내 확진환자</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{domestic}}</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">국외 확진환자</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{abroad}}</h1>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="row mb-3 mt-3 text-center"> 
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">누적 확진환자</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{confirm}}</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">누적 격리해제</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{release}}</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">누적 격리중</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{isolation}}</h1>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 fw-normal">누적 사망</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{death}}</h1>
+          </div>
+        </div>
+    </div>     
+</div>
+{% endblock %}

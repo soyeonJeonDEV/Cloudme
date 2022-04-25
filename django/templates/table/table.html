@@ -1,0 +1,166 @@
+{% include "header.html" %} 
+{% block content %}
+{% load static %}
+<link href='{% static "/css/style.css" %}' rel="stylesheet">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+   
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">국가별 해외 입국 제한 현황</h1>
+                    <p class="mb-4">코로나19관련 국가별 입국 제한 현황을 안내드리오니, 참고하여 주시기 바랍니다.</p>
+                    <ul id="menu_ul">
+                        <li class="list-group-item" id="menu_li"><a href="https://www.0404.go.kr/dev/newest_list.mofa">외교부 해외안전여행 홈페이지</a></li>
+                        <li class="list-group-item" id="menu_li"><a href="http://overseas.mofa.go.kr/returnInfoPage.do">각국 재외공관 홈페이지</a></li>
+                        <li class="list-group-item"><a href="https://www.koreanair.com/kr/ko/travel-update/covid19/travel-restriction/korea">대한항공 국가별 입국 제한 안내</a></li>
+                        <li class="list-group-item"><a href="https://flyasiana.com/C/KR/KO/contents/entry-restrictions">아시아나 국가별 입국 제한 안내</a></li>   
+                    </ul>
+                    <p class="mb-4">자세한 내용은 외교부 여행안전사이트의 최신안전소식 또는 방문하시려는 국가/지역 정보의 공식 홈페이지 또는 각국 재외공관 홈페이지를 참고하여 주시기 바랍니다.</p>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">주요 국가별 방역정책 현황 (’22.4.14 기준)</h6>
+                            <ul >
+                                <li>코로나19관련 국가별 방역정책 현황은 정보 제공을 목적으로 하며, 승객의 출입국을 보장하지 않습니다.</li>
+                                <li>국가/지역별 정책현황이 수시로 변경되고 있음으로 아래 내용 또한 변경될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">국가</th>
+                                            <th colspan="2">한국인 여행자 격리여부 </th>
+                                            <th rowspan="2">코로나<br>음성확인서</th>
+                                            <th rowspan="2">현지 코로나 검사<br>(접종 완료자 기준)</th>
+                                            <th rowspan="2">비고 </th>
+                                        </tr>
+                                        <tr>
+                                            <th>접종완료자</th>
+                                            <th>미접종자</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>일본</td>
+                                            <td>입국금지</td>
+                                            <td>입국금지</td>
+                                            <td>필요</td>
+                                            <td>1회<br>(①입국즉시(공항), ②격리 3일차)</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>중국<br>(베이징 기준)</td>
+                                            <td>14일 시설격리<br>+7일 자가/시설격리<br>+7일 자가모니터링</td>
+                                            <td>14일 시설격리<br>+7일 자가/시설격리<br>+7일 자가모니터링</td>
+                                            <td>필요<br>(12시간 내 2회)</td>
+                                            <td>6회<br>(①입국즉시(공항), ②3일차 ③7일차
+                                                ④14일차 ⑤21일차 ⑥28일차)</td>
+                                            <td>주마다 격리조건 상이<br>완치자 추가 검역 실시(폐영상검사,
+                                                PCR 2회 후 서면보고서 발급)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>대만</td>
+                                            <td>입국금지</td>
+                                            <td>입국금지</td>
+                                            <td>필요</td>
+                                            <td>4회<br>(①입국즉시(공항), ②3,5,7일차 자가진단 ③10일차 PCR ④자발적 건강관리 3,6,7일차 자가진단)</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>홍콩</td>
+                                            <td>입국금지<br>(홍콩거주자 21일 격리)</td>
+                                            <td>입국금지</td>
+                                            <td>필요</td>
+                                            <td>7회<br>(입국즉시(공항) 검사 포함)</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>베트남<br>(푸꾸옥/다낭)</td>
+                                            <td>격리면제</td>
+                                            <td>격리면제</td>
+                                            <td>필요<br>(3일이내 발급)</td>
+                                            <td>-</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>싱가포르</td>
+                                            <td>격리면제</td>
+                                            <td>입국금지</td>
+                                            <td>필요<br>(2일이내 발급)</td>
+                                            <td>-</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>태국</td>
+                                            <td>격리면제</td>
+                                            <td>10일 격리</td>
+                                            <td>불필요</td>
+                                            <td>1회<br>(①입국즉시(공항)</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>말레이시아</td>
+                                            <td>격리면제</td>
+                                            <td>5일 격리</td>
+                                            <td>필요<br>(2일이내 발급)</td>
+                                            <td>1회<br>(입국즉시(공항))</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>괌</td>
+                                            <td>격리면제</td>
+                                            <td>10일 격리</td>
+                                            <td>필요</td>
+                                            <td>-</td>
+                                            <td>음성확인서(PCR 또는 항원)<br>소지자 격리면제<br>(3일이내 PCR검사 or
+                                                1일이내 항원검사)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>사이판</td>
+                                            <td>격리면제<br>(입국당일 PCR검사 실시,
+                                                음성판정시까지 격리)</td>
+                                            <td>5일 격리</td>
+                                            <td>필요<br>(1일이내 발급)</td>
+                                            <td>2회<br>(①입국당일,②5일차)</td>
+                                            <td>무증상 시 별도 검사 및 격리 불필요</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+{% endblock %}

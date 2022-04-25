@@ -1,0 +1,61 @@
+{% include "header.html" %} 
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+<link href='{% static "/css/style.css" %}' rel="stylesheet">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+<div class="container">
+<div class="container my-3">
+    <div style="float: right;">
+    <a href="/board"><button class="btn btn-outline-success">목록으로 돌아가기</button></a>
+</div>
+    <h2 class="border-bottom py-2">{{ post.title }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ post.content }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="badge badge-light p-2">{{ post.date }}</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        {% if post.writer == user %}
+        <a href="{% url 'board:post_edit_form' post.id %}"><button class="btn btn-outline-success">글 수정</button></a>
+       <button class="btn btn-outline-danger" id = "del_qna" type = "button" onclick="fn_del_qna();">글 삭제</button>
+        {% endif %}
+    </div>
+    <h5 class="border-bottom my-3 py-2">{{post.answer_set.count}}개의 답글이 있습니다.</h5>
+    {% for answer in post.answer_set.all %}
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ answer.content }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="badge badge-light p-2">{{ answer.date }}</div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <form action="{% url 'board:answer_create' post.id %}" method="post" class="my-3">
+        {% csrf_token %}
+        <div class="form-group">
+            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+        </div>
+        <input type="submit" value="답글등록" class="btn btn-outline-success">
+    </form>
+</div>
+
+<script>
+    function fn_del_qna(){
+          var res = confirm('게시글을 정말로 삭제하시겠습니까?');
+          if(res){
+            window.location.href = "{% url 'board:post_remove' post.id %}"
+            alert("성공적으로 삭제되었습니다.");
+          }
+        }
+    </script>
+{% endblock %}

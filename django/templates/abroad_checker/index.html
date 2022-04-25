@@ -1,0 +1,21 @@
+{% include "header.html" %} 
+{% block content %}
+{% load static %}
+<link href='{% static "/css/style.css" %}' rel="stylesheet">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+<div class="row justify-content-center mb-2">
+    <div class="col-md-4">
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title">미세먼지 수치</h5>
+                <p class="card-text">{{station}}</p>
+                <a href="{% url 'abroad_checker:detail'%}" class="btn btn-primary">>> 자세히</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
