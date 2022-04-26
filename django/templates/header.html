@@ -23,7 +23,6 @@
         <li><a class="nav-link scrollto active" href="/">Home</a></li>
         <li><a class="nav-link scrollto " href="{% url 'board:index' %}">공유의장</a></li>
         <li><a class="nav-link scrollto" href="{% url 'covid_checker:index' %}">코로나 현황</a></li>
-        <li><a class="nav-link scrollto " href="{% url 'dust_checker:index' %}">미세먼지</a></li>
         <li><a class="nav-link scrollto" href="{% url 'table:index' %}">해외 입국 현황</a></li>
         {% if user.is_authenticated %}
         <li><a class="getstarted scrollto" href="{% url 'common:logout' %}">Logout</a></li>
