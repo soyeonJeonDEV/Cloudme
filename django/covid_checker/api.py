@@ -1,21 +1,27 @@
+from tabnanny import check
+from urllib.parse import urlencode, unquote, quote_plus
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime
+import xmltodict
 
+serviceKey = "p7zGkmRh2x32vu%2BuvThZkvgWgBnug8qu2YB%2F3AQHyOERlV3SqETp1UPGubmd5La2plHZDURFlgotkT1ctC6b2g%3D%3D"
+serviceKeyDecoded = unquote(serviceKey, 'UTF-8')
+today = datetime.today().strftime("%Y%m%d")
 
 def check_covid():
-    data = []
-    url = "http://ncov.mohw.go.kr/"
-    res = requests.get(url)
+#    info = []
+    url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson"
+    numOfRows="1"
+    pageNo="1"
+    startCreateDt= today
+
+
+    queryParams = '?' + urlencode({ quote_plus('ServiceKey') : serviceKeyDecoded, quote_plus('pageNo') : pageNo, quote_plus('numOfRows') : numOfRows, quote_plus('startCreateDt') : startCreateDt })
+    res = requests.get(url + queryParams)
     xml = res.text
+ #   soup = BeautifulSoup(xml, 'html.parser')
+    xmlObject = xmltodict.parse(xml)
+    allData = xmlObject['response']['body']['items']['item']
 
-    soup = BeautifulSoup(xml, 'html.parser')
-    date = soup.find('span', class_='livedate').text
-    #datalist = soup.find('div', class_='occur_num').findAll('div')
-    #for i in datalist:
-    #    data.append(i.find('span', class_='data').text)
-    #accumulated = soup.find('ul', class_="liveNum")
-    #datalist = accumulated.findAll('span', class_='num')
-    #for i in datalist:
-    #   data.append(i.text)
-
-    return date, data
+    return allData
