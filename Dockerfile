@@ -5,6 +5,8 @@ RUN pip3 install pymysql==1.0.2
 RUN pip install django-redis
 RUN pip install requests
 RUN pip install bs4
+RUN pip install xmltodict
+
  
 WORKDIR /usr/src/app
 
