@@ -12,25 +12,25 @@
 <!-- ---------------------- [edit] ------------------------ -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <h3 class="text-center mt-3">코로나 현황</h3>
-<h5 class="text-center mt-3"> {{createDt}} </h5>
+<h5 class="text-center mt-3"> {{data.createDt}} </h5>
 <div class="row mb-3 mt-3 text-center justify-content-center">
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">국내 확진환자</h4>
+            <h4 class="my-0 fw-normal">누적 확진환자</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title"></h1>
+            <h1 class="card-title pricing-card-title">{{data.decideCnt}}</h1>
           </div>
         </div>
     </div>
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">국외 확진환자</h4>
+            <h4 class="my-0 fw-normal">누적 사망자</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{abroad}}</h1>
+            <h1 class="card-title pricing-card-title">{{data.deathCnt}}</h1>
           </div>
         </div>
     </div>
@@ -39,40 +39,40 @@
     <div class="col-md-3">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">누적 확진환자</h4>
+            <h4 class="my-0 fw-normal">일일 사망</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{decideCnt}}</h1>
+            <h1 class="card-title pricing-card-title">{{today.0}}</h1>
           </div>
         </div>
     </div>
     <div class="col-md-3">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">누적 격리해제</h4>
+            <h4 class="my-0 fw-normal">일일 재원 위중증</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{release}}</h1>
+            <h1 class="card-title pricing-card-title">{{today.1}}</h1>
           </div>
         </div>
     </div>
     <div class="col-md-3">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">누적 격리중</h4>
+            <h4 class="my-0 fw-normal">신규 입원</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{isolation}}</h1>
+            <h1 class="card-title pricing-card-title">{{today.2}}</h1>
           </div>
         </div>
     </div>
     <div class="col-md-3">
       <div class="card mb-4 shadow-sm">
           <div class="card-header">
-            <h4 class="my-0 fw-normal">누적 사망</h4>
+            <h4 class="my-0 fw-normal">일일 확진자</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{deathCnt}}</h1>
+            <h1 class="card-title pricing-card-title">{{today.3}}</h1>
           </div>
         </div>
     </div>     

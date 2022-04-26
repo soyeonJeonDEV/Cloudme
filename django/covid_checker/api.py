@@ -25,3 +25,14 @@ def check_covid():
     allData = xmlObject['response']['body']['items']['item']
 
     return allData
+
+url = 'http://ncov.mohw.go.kr/' # 사이트 링크
+
+response = requests.get(url) 
+html = response.text
+soup = BeautifulSoup(html, 'html.parser')
+
+def mail():
+   mail_data = str(soup.select_one('#content > div > div > div > div.liveToggleOuter > div > div.live_left > div.occurrenceStatus > div.occur_graph > table > tbody > tr:nth-child(1)'))
+   xmlObject = xmltodict.parse(mail_data)
+   return xmlObject
