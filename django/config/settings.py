@@ -113,12 +113,17 @@ DATABASES = {
 }
 
 #redis server
-#CACHES = {
-#    "default": {
-#        "BACKEND": "django_redis.cache.RedisCache",
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
 #        "LOCATION": "redis://thdus2-redis.g3zgpy.ng.0001.eun1.cache.amazonaws.com:6379/",
-#    }
-#}
+        "LOCATION": "redis://redis-svc.was-ns:6379/",
+         "OPTIONS": {
+             "PASSWORD": "Pa$$w0rd",
+             "CLIENT_CLASS": "redis_cache.client.DefaultClient",
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
