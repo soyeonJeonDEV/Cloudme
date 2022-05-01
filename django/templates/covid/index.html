@@ -1,0 +1,194 @@
+{% include "header.html" %} 
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<section class="breadcrumbs">
+<div class="container">
+<h3 class="text-center mt-30">해외 코로나 현황</h3>
+<script type="text/javascript">
+    google.charts.load('current', {
+      'packages':['geochart'],
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Popularity'],
+        ['{{ nationNmEn.54 }}', {{ natDefCnt.54 }}],
+        ['{{ nationNmEn.55 }}', {{ natDefCnt.55 }}],
+        ['{{ nationNmEn.56 }}', {{ natDefCnt.56 }}],
+        ['{{ nationNmEn.57 }}', {{ natDefCnt.57 }}],
+        ['{{ nationNmEn.58 }}', {{ natDefCnt.58 }}],
+        ['{{ nationNmEn.59 }}', {{ natDefCnt.59 }}],
+        ['{{ nationNmEn.60 }}', {{ natDefCnt.60 }}],
+        ['{{ nationNmEn.61 }}', {{ natDefCnt.61 }}],
+        ['{{ nationNmEn.62 }}', {{ natDefCnt.62 }}],
+        ['{{ nationNmEn.63 }}', {{ natDefCnt.63 }}],
+        ['{{ nationNmEn.64 }}', {{ natDefCnt.64 }}],
+        ['{{ nationNmEn.65 }}', {{ natDefCnt.65 }}],
+        ['{{ nationNmEn.66 }}', {{ natDefCnt.66 }}],
+        ['{{ nationNmEn.67 }}', {{ natDefCnt.67 }}],
+        ['{{ nationNmEn.68 }}', {{ natDefCnt.68 }}],
+        ['{{ nationNmEn.69 }}', {{ natDefCnt.69 }}],
+        ['{{ nationNmEn.70 }}', {{ natDefCnt.70 }}],
+        ['{{ nationNmEn.71 }}', {{ natDefCnt.71 }}],
+        ['{{ nationNmEn.72 }}', {{ natDefCnt.72 }}],
+        ['{{ nationNmEn.73 }}', {{ natDefCnt.73 }}],
+        ['{{ nationNmEn.74 }}', {{ natDefCnt.74 }}],
+        ['{{ nationNmEn.75 }}', {{ natDefCnt.75 }}],
+        ['{{ nationNmEn.76 }}', {{ natDefCnt.76 }}],
+        ['{{ nationNmEn.77 }}', {{ natDefCnt.77 }}],
+        ['{{ nationNmEn.78 }}', {{ natDefCnt.78 }}],
+        ['{{ nationNmEn.79 }}', {{ natDefCnt.79 }}],
+        ['{{ nationNmEn.80 }}', {{ natDefCnt.80 }}],
+        ['{{ nationNmEn.81 }}', {{ natDefCnt.81 }}],
+        ['{{ nationNmEn.82 }}', {{ natDefCnt.82 }}],
+        ['{{ nationNmEn.83 }}', {{ natDefCnt.83 }}],
+        ['{{ nationNmEn.84 }}', {{ natDefCnt.84 }}],
+        ['{{ nationNmEn.85 }}', {{ natDefCnt.85 }}],
+        ['{{ nationNmEn.86 }}', {{ natDefCnt.86 }}],
+        ['{{ nationNmEn.87 }}', {{ natDefCnt.87 }}],
+        ['{{ nationNmEn.88 }}', {{ natDefCnt.88 }}],
+        ['{{ nationNmEn.89 }}', {{ natDefCnt.89 }}],
+        ['{{ nationNmEn.90 }}', {{ natDefCnt.90 }}],
+        ['{{ nationNmEn.91 }}', {{ natDefCnt.91 }}],
+        ['{{ nationNmEn.92 }}', {{ natDefCnt.92 }}],
+        ['{{ nationNmEn.93 }}', {{ natDefCnt.93 }}],
+        ['{{ nationNmEn.94 }}', {{ natDefCnt.94 }}],
+        ['{{ nationNmEn.95 }}', {{ natDefCnt.95 }}],
+        ['{{ nationNmEn.96 }}', {{ natDefCnt.96 }}],
+        ['{{ nationNmEn.97 }}', {{ natDefCnt.97 }}],
+        ['{{ nationNmEn.98 }}', {{ natDefCnt.98 }}],
+        ['{{ nationNmEn.99 }}', {{ natDefCnt.99 }}],
+        ['{{ nationNmEn.100 }}', {{ natDefCnt.100 }}],
+        ['{{ nationNmEn.101 }}', {{ natDefCnt.101 }}],
+        ['{{ nationNmEn.102 }}', {{ natDefCnt.102 }}],
+        ['{{ nationNmEn.103 }}', {{ natDefCnt.103 }}],
+        ['{{ nationNmEn.104 }}', {{ natDefCnt.104 }}],
+        ['{{ nationNmEn.105 }}', {{ natDefCnt.105 }}],
+        ['{{ nationNmEn.106 }}', {{ natDefCnt.106 }}],
+        ['{{ nationNmEn.107 }}', {{ natDefCnt.107 }}],
+        ['{{ nationNmEn.108 }}', {{ natDefCnt.108 }}],
+        ['{{ nationNmEn.109 }}', {{ natDefCnt.109 }}],
+        ['{{ nationNmEn.110 }}', {{ natDefCnt.110 }}],
+        ['{{ nationNmEn.111 }}', {{ natDefCnt.111 }}],
+        ['{{ nationNmEn.112 }}', {{ natDefCnt.112 }}],
+        ['{{ nationNmEn.113 }}', {{ natDefCnt.113 }}],
+        ['{{ nationNmEn.114 }}', {{ natDefCnt.114 }}],
+        ['{{ nationNmEn.115 }}', {{ natDefCnt.115 }}],
+        ['{{ nationNmEn.116 }}', {{ natDefCnt.116 }}],
+        ['{{ nationNmEn.117 }}', {{ natDefCnt.117 }}],
+        ['{{ nationNmEn.118 }}', {{ natDefCnt.118 }}],
+        ['{{ nationNmEn.119 }}', {{ natDefCnt.119 }}],
+        ['{{ nationNmEn.120 }}', {{ natDefCnt.120 }}],
+        ['{{ nationNmEn.138 }}', {{ natDefCnt.138 }}],
+        ['{{ nationNmEn.139 }}', {{ natDefCnt.139 }}],
+        ['{{ nationNmEn.140 }}', {{ natDefCnt.140 }}],
+        ['United States', {{ natDefCnt.141 }}],
+        ['{{ nationNmEn.147 }}', {{ natDefCnt.147 }}],
+        ['{{ nationNmEn.148 }}', {{ natDefCnt.148 }}],
+        ['{{ nationNmEn.149 }}', {{ natDefCnt.149 }}],
+        ['{{ nationNmEn.150 }}', {{ natDefCnt.150 }}],
+        ['{{ nationNmEn.151 }}', {{ natDefCnt.151 }}],
+        ['{{ nationNmEn.152 }}', {{ natDefCnt.152 }}],
+        ['{{ nationNmEn.153 }}', {{ natDefCnt.153 }}],
+        ['{{ nationNmEn.154 }}', {{ natDefCnt.154 }}],
+        ['{{ nationNmEn.155 }}', {{ natDefCnt.155 }}],
+        ['{{ nationNmEn.156 }}', {{ natDefCnt.156 }}],
+        ['{{ nationNmEn.157 }}', {{ natDefCnt.157 }}],
+        ['{{ nationNmEn.158 }}', {{ natDefCnt.158 }}],
+        ['{{ nationNmEn.159 }}', {{ natDefCnt.159 }}],
+        ['{{ nationNmEn.160 }}', {{ natDefCnt.160 }}],
+        ['{{ nationNmEn.161 }}', {{ natDefCnt.161 }}],
+        ['{{ nationNmEn.162 }}', {{ natDefCnt.162 }}],
+        ['{{ nationNmEn.163 }}', {{ natDefCnt.163 }}],
+        ['{{ nationNmEn.164 }}', {{ natDefCnt.164 }}],
+        ['{{ nationNmEn.165 }}', {{ natDefCnt.165 }}],
+        ['{{ nationNmEn.166 }}', {{ natDefCnt.166 }}],
+        ['{{ nationNmEn.167 }}', {{ natDefCnt.167 }}],
+        ['{{ nationNmEn.168 }}', {{ natDefCnt.168 }}],
+        ['{{ nationNmEn.169 }}', {{ natDefCnt.169 }}],
+        ['{{ nationNmEn.170 }}', {{ natDefCnt.170 }}],
+        ['{{ nationNmEn.176 }}', {{ natDefCnt.176 }}],
+        ['{{ nationNmEn.177 }}', {{ natDefCnt.177 }}],
+        ['{{ nationNmEn.178 }}', {{ natDefCnt.178 }}],
+        ['{{ nationNmEn.179 }}', {{ natDefCnt.179 }}],
+        ['{{ nationNmEn.180 }}', {{ natDefCnt.180 }}],
+        ['{{ nationNmEn.183 }}', {{ natDefCnt.183 }}],
+        ['{{ nationNmEn.184 }}', {{ natDefCnt.184 }}],
+        ['{{ nationNmEn.185 }}', {{ natDefCnt.185 }}],
+        ['{{ nationNmEn.187 }}', {{ natDefCnt.187 }}],
+        ['{{ nationNmEn.188 }}', {{ natDefCnt.188 }}],
+        ['{{ nationNmEn.189 }}', {{ natDefCnt.189 }}],
+      ]);
+
+      var options = {
+        colorAxis: {colors: ['red']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+      chart.draw(data, options);
+    }
+</script>
+
+  <div class="container">
+    <hr class="">
+      <div class="col-md-14">
+        <div id="regions_div" style="width: 1200px; height: 700px;"></div>
+<section class="breadcrumbs">
+  <div class="container">
+  <h3 class="text-center mt-30">주요국가 확진자 수</h3>
+  <div class="container">
+    <hr class="">
+      <div class="col-md-12">
+        <div class="row top-buffer"></div>
+        <canvas id ="myChartTwo"></canvas>
+      </div>
+    </div>
+  </div>
+
+<script>
+  let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+  let barChart2 = new Chart(myChartTwo, {
+    type : 'bar', //pie, line, bar, polarArea
+    data : {
+      labels : ['{{nationNm.189}}', '{{nationNm.188}}', '{{nationNm.184}}', '{{nationNm.102}}', '{{nationNm.103}}', '{{nationNm.104}}', '{{nationNm.105}}', '{{nationNm.106}}',
+      '{{nationNm.140}}', '{{nationNm.141}}', '{{nationNm.186}}',], 
+      datasets : [{
+        label : '누적 확진자 수',
+        data: [
+          {{ natDefCnt.189 }},
+          {{ natDefCnt.188 }},
+          {{ natDefCnt.184 }},
+          {{ natDefCnt.102 }},
+          {{ natDefCnt.103 }},
+          {{ natDefCnt.104 }},
+          {{ natDefCnt.105 }},
+          {{ natDefCnt.106 }},
+          {{ natDefCnt.140 }},
+          {{ natDefCnt.141 }},
+          {{ natDefCnt.186 }},
+        ],
+        backgroundColor:[
+        ]
+      }]
+    }
+  });
+</script>
+
+
+</body>
+</html>
+{% endblock %}
