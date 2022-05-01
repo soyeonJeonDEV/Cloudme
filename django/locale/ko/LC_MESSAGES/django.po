@@ -100,9 +100,14 @@ msgstr "일일 확진자"
 msgid "공유의장"
 msgstr "공유의장"
 
+#: templates/header.html:26
+msgid "해외 코로나 현황"
+msgstr "해외 코로나 현황"
+
 #: templates/header.html:27
 msgid "해외 입국 현황"
 msgstr "해외 입국 현황"
+
 
 #: templates/main.html:53
 msgid "Enjoy your trip"

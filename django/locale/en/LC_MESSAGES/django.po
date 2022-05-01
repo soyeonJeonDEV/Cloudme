@@ -100,6 +100,10 @@ msgstr "Confirmed"
 msgid "공유의장"
 msgstr "Board"
 
+#: templates/header.html:26
+msgid "해외 코로나 현황"
+msgstr "Overseas covid info"
+
 #: templates/header.html:27
 msgid "해외 입국 현황"
 msgstr "Overseas arrivals info"
