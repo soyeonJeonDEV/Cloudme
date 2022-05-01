@@ -3,7 +3,6 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from .api import covid_natDeathCnt, covid_natDefCnt, covid_nationNm, covid_nationNmEn
-from .api import check_covid,mail
 
 def index(request):    
     natDeathCnt = covid_natDeathCnt

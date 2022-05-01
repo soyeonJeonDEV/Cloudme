@@ -9,6 +9,7 @@ RUN pip3 install django-redis
 RUN pip3 install xmltodict
 RUN pip3 install requests
 RUN pip3 install bs4
+RUN pip3 install lxml
 
  
 WORKDIR /usr/src/app
