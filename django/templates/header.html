@@ -15,7 +15,7 @@
 <header id="header" class="fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
 
-    <h1 class="logo"><a href="/">구르美</a></h1>
+    <h1 class="logo"><a href="/">{% trans "구르美" %}</a></h1>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -23,14 +23,28 @@
       <ul>
         <li><a class="nav-link scrollto active" href="/">Home</a></li>
         <li><a class="nav-link scrollto " href="{% url 'board:index' %}">{% trans "공유의장" %}</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'covid_checker:index' %}">코로나 현황</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'table:index' %}">해외 입국 현황</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'covid_checker:index' %}">{% trans "코로나 현황" %}</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'table:index' %}">{% trans "해외 입국 현황" %}</a></li>
         {% if user.is_authenticated %}
         <li><a class="getstarted scrollto" href="{% url 'common:logout' %}">Logout</a></li>
         {% else %}
         <li><a class="getstarted scrollto" href="{% url 'common:login' %}">Login</a></li>
         <li><a class="getstarted scrollto" href="{% url 'common:register' %}">Sign up</a></li>
         {% endif %}
+	<form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Switch" class="btn btn-outline-success">
+</form>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

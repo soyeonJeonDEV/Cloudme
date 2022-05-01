@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko">
   {% load static %}
+  {% load i18n %}
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -49,7 +50,7 @@
           <div class="carousel-item active" style="background-image: url(https://cdn.pixabay.com/photo/2020/05/25/17/03/travel-5219496_960_720.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Enjoy your trip</h2>
+                <h2 class="animate__animated animate__fadeInDown">{% trans "Enjoy your trip" %}</h2>
                 <p class="animate__animated animate__fadeInUp"></p>
                 <div>
                 
@@ -62,8 +63,8 @@
           <div class="carousel-item" style="background-image: url(https://cdn.pixabay.com/photo/2014/04/02/14/09/world-map-306338_960_720.png);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">코로나 현황</h2>
-                <p class="animate__animated animate__fadeInUp">코로나 현황을 알아보세요.</p>
+                <h2 class="animate__animated animate__fadeInDown">{% trans "코로나 현황" %}</h2>
+                <p class="animate__animated animate__fadeInUp">{% trans "코로나 현황을 알아보세요." %}</p>
                 <div>
                   <a href="{% url 'covid_checker:index' %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Go</a>
                 </div>
@@ -75,8 +76,8 @@
           <div class="carousel-item" style="background-image: url(https://cdn.pixabay.com/photo/2017/09/20/11/27/bulletin-board-2768204_960_720.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">공유의 장</h2>
-                <p class="animate__animated animate__fadeInUp">많은 사람과 이야기를 공유해보세요.</p>
+                <h2 class="animate__animated animate__fadeInDown">{% trans "공유의 장" %}</h2>
+                <p class="animate__animated animate__fadeInUp">{% trans "많은 사람과 이야기를 공유해보세요." %}</p>
                 <div>
                   <a href="{% url 'board:index' %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Go</a>
                 </div>
@@ -115,3 +116,4 @@
 </form>
 </body>
 </html>
+
