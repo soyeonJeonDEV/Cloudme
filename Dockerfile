@@ -1,11 +1,14 @@
 FROM python:3.8
 
-RUN pip3 install django
+RUN apt update
+RUN apt install gettext -y
+
+RUN pip3 install django==3.1.3
 RUN pip3 install pymysql==1.0.2
 RUN pip install django-redis
+RUN pip install xmltodict
 RUN pip install requests
 RUN pip install bs4
-RUN pip install xmltodict
 
  
 WORKDIR /usr/src/app
