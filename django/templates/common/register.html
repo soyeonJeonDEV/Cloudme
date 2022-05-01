@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -7,7 +8,7 @@
 
 <div class="sidenav">
 	<div class="login-main-text">
-    <a href="/"  style="text-decoration:none; color:#ffffff;"><h2 >구르美<br> Signup Page</h2></a>
+    <a href="/"  style="text-decoration:none; color:#ffffff;"><h2 >{% trans "구르美" %}<br> Signup Page</h2></a>
 	</div>
  </div>
  <div class="main">
@@ -17,40 +18,41 @@
   <form method="post" class="post-form" action="{% url 'common:register' %}">
     {% csrf_token %}
     <div class="form-group">
-      <label for="username">아이디</label>
+      <label for="username">{% trans "아이디" %}</label>
       <i class="fas fa-user prefix grey-text"></i>
       <input type="text" name="username" id="username" class="form-control">
     </div>
     <div class="form-group">
-      <label for="password1">패스워드</label>
+      <label for="password1">{% trans "패스워드" %}</label>
       <i class="fas fa-key prefix grey-text"></i>
       <input type="password" name="password1" id="password1" class="form-control">
     </div>
     <div class="form-group">
-      <label for="password2">패스워드 확인</label>
+      <label for="password2">{% trans "패스워드 확인" %}</label>
       <i class="fas fa-key prefix grey-text"></i>
       <input type="password" name="password2" id="password2" class="form-control">
     </div>                    
     <div class="form-group">
-      <label for="email">이메일</label>
+      <label for="email">{% trans "이메일" %}</label>
       <i class="fas fa-envelope prefix grey-text"></i>
       <input type="email" name="email" id="email" class="form-control">
     </div>                                        
     <div class="form-group">
-      <label for="name">성명</label>
+      <label for="name">{% trans "성명" %}</label>
       <i class="fas fa-signature prefix grey-text"></i>
       <input type="text" name="name" id="name" class="form-control">
     </div>                                   
     <div class="md-form custom-control custom-checkbox ml-4">
       <input type="checkbox" class="custom-control-input" name="is_admin" id="is_admin">
-      <label class="custom-control-label" for="is_admin">관리자 여부</label>
+      <label class="custom-control-label" for="is_admin">{% trans "관리자 여부" %}</label>
     </div>                      
     <div class="text-center">
-      <button type="submit" class="btn btn-black">회원가입</button>
-      <hr><a href="{% url 'common:login' %}">회원이신가요? 로그인</a>
+      <button type="submit" class="btn btn-black">{% trans "회원가입" %}</button>
+      <hr><a href="{% url 'common:login' %}">{% trans "회원이신가요? 로그인" %}</a>
     </div>                    
   </form>
 </div>
 </div>
 </div>
+
 

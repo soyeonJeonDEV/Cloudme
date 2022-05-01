@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-01 05:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings.py:67
+msgid "Korean"
+msgstr ""
+
+#: config/settings.py:68
+msgid "English"
+msgstr ""
+
+#: templates/common/login.html:11 templates/common/register.html:11
+#: templates/header.html:18
+msgid "구르美"
+msgstr "cloudme"
+
+#: templates/common/login.html:20 templates/common/register.html:21
+msgid "아이디"
+msgstr "ID"
+
+#: templates/common/login.html:24 templates/common/register.html:26
+msgid "패스워드"
+msgstr "PASSWORD"
+
+#: templates/common/login.html:31
+msgid "회원이 아닌가요? 회원가입"
+msgstr "register?"
+
+#: templates/common/register.html:31
+msgid "패스워드 확인"
+msgstr "Confirm password"
+
+#: templates/common/register.html:36
+msgid "이메일"
+msgstr "Email"
+
+#: templates/common/register.html:41
+msgid "성명"
+msgstr "Name"
+
+#: templates/common/register.html:47
+msgid "관리자 여부"
+msgstr "check admin"
+
+#: templates/common/register.html:50
+msgid "회원가입"
+msgstr "Register"
+
+#: templates/common/register.html:51
+msgid "회원이신가요? 로그인"
+msgstr "login?"
+
+#: templates/covid_checker/covid_main.html:16 templates/header.html:26
+#: templates/main.html:66
+msgid "코로나 현황"
+msgstr "covid info"
+
+#: templates/covid_checker/covid_main.html:22
+msgid "누적 확진환자"
+msgstr "Cumulative confirmed cases "
+
+#: templates/covid_checker/covid_main.html:32
+msgid "누적 사망자"
+msgstr "Cumulative deaths cases"
+
+#: templates/covid_checker/covid_main.html:44
+msgid "일일 사망"
+msgstr "Deaths"
+
+#: templates/covid_checker/covid_main.html:54
+msgid "일일 재원 위중증"
+msgstr "Severe"
+
+#: templates/covid_checker/covid_main.html:64
+msgid "신규 입원"
+msgstr "Admitted"
+
+#: templates/covid_checker/covid_main.html:74
+msgid "일일 확진자"
+msgstr "Confirmed"
+
+#: templates/header.html:25
+msgid "공유의장"
+msgstr "Board"
+
+#: templates/header.html:27
+msgid "해외 입국 현황"
+msgstr "Overseas arrivals info"
+
+#: templates/main.html:53
+msgid "Enjoy your trip"
+msgstr ""
+
+#: templates/main.html:67
+msgid "실시간  정보를 알아보세요."
+msgstr "Get real-time information"
+
+#: templates/main.html:79
+msgid "공유의 장"
+msgstr "Board"
+
+#: templates/main.html:80
+msgid "많은 사람과 이야기를 공유해보세요."
+msgstr "Share your story with many people."
+
+#~ msgid "즐거운 여행 되세요."
+#~ msgstr "Enjoy your trip"

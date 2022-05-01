@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import pymysql
+from django.utils.translation import ugettext_lazy as _
 # pymysql django ORM 연동
 pymysql.install_as_MySQLdb()
 
@@ -45,17 +46,31 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'board.apps.BoardConfig',
     'common.apps.CommonConfig',
+    'django_redis',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+LANGUAGE_CODE = 'ko-kr'
+USE_I18N = True
+
+LANGUAGES = [
+    ('ko', _('Korean')),
+    ('en', _('English')),
+]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 ROOT_URLCONF = 'config.urls'
 
@@ -98,16 +113,17 @@ DATABASES = {
 }
 
 #redis server
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redis-svc.was-ns:6379",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "PASSWORD": "Pa$$w0rd"
-        }
-    }
-}
+#CACHES = {
+#    "default": {
+#        "BACKEND": "django_redis.cache.RedisCache",
+##        "LOCATION": "redis://thdus2-redis.g3zgpy.ng.0001.eun1.cache.amazonaws.com:6379/",
+#        "LOCATION": "redis://redis-svc.was-ns:6379/",
+#         "OPTIONS": {
+#             "PASSWORD": "Pa$$w0rd",
+#             "CLIENT_CLASS": "redis_cache.client.DefaultClient",
+#        },
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

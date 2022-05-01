@@ -1,26 +1,39 @@
 {% load static %}
+{% load i18n %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
 
-<div class="container my-3">
-    <form method="post" class="post-form" action="{% url 'common:login' %}">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">사용자ID</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   value="{{ form.username.value|default_if_none:'' }}">
-        </div>
-        <div class="form-group">
-            <label for="password">비밀번호</label>
-            <input type="password" class="form-control" name="password" id="password"
-                   value="{{ form.password.value|default_if_none:'' }}">
-        </div>
- 	<div class="row">
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary">로그인</button>        
-            </div>
-            <div class="col-8 text-right">
-                 <a href="{%url 'common:signup' %}">회원가입</a>
-            </div>            
-        </div> 
-    </form>
-</div>
+<div class="sidenav">
+	<div class="login-main-text">
+	   <a href="/"  style="text-decoration:none; color:#ffffff;"><h2 >{% trans "구르美" %}<br> Login Page</h2></a>
+	</div>
+ </div>
+ <div class="main">
+	<div class="col-md-6 col-sm-12">
+	   <div class="login-form">
+		  <form method="post" class="post-form" action="{% url 'common:login' %}">
+			{% csrf_token %}
+			 <div class="form-group">
+				<label for="username">{% trans "아이디" %}</label>
+				<input type="text" name="username" id="username" class="form-control">
+			 </div>
+			 <div class="form-group">
+				<label for="password">{% trans "패스워드" %}</label>
+				<i class="fas fa-key prefix grey-text"></i>
+	  			<input type="password" name="password" id="password" class="form-control">
+	  			
+			 </div>
+			 <div class="text-center">
+			 <button type="submit" class="btn btn-black">Login</button>
+			 <hr><a href="{% url 'common:register' %}">{% trans "회원이 아닌가요? 회원가입" %}</a>
+			</div>
+		  </form>
+	   </div>
+	</div>
+ </div>
+
+
+

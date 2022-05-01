@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
     <!-- Vendor CSS Files -->
         <link href='{% static "/vendor/animate.css/animate.min.css" %}' rel="stylesheet">
         <link href='{% static "/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
@@ -14,17 +15,17 @@
 <header id="header" class="fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
 
-    <h1 class="logo"><a href="/">구르美</a></h1>
+    <h1 class="logo"><a href="/">{% trans "구르美" %}</a></h1>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="/">Home</a></li>
-        <li><a class="nav-link scrollto " href="{% url 'board:index' %}">공유의장</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'covid_checker:index' %}">코로나 현황</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'covid:index' %}">해외 코로나 현황</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'table:index' %}">해외 입국 현황</a></li>
+        <li><a class="nav-link scrollto " href="{% url 'board:index' %}">{% trans "공유의장" %}</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'covid_checker:index' %}">{% trans "코로나 현황" %}</a></li>
+         <li><a class="nav-link scrollto" href="{% url 'covid:index' %}">해외 코로나 현황</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'table:index' %}">{% trans "해외 입국 현황" %}</a></li>
         {% if user.is_authenticated %}
         <li><a class="getstarted scrollto" href="{% url 'common:logout' %}">Logout</a></li>
         {% else %}

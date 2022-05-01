@@ -29,5 +29,6 @@ urlpatterns = [
     path('table', include('table.urls')),
     path('abroad_checker', include('abroad_checker.urls')),
     path('covid/', include('covid.urls')),
+    path('i18n/',include('django.conf.urls.i18n')),
 ]
 
